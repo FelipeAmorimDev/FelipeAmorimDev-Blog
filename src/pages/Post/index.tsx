@@ -40,12 +40,7 @@ export function Post() {
   useEffect(() => {
     async function fetchPost() {
       const response = await api.get(
-        `/repos/felipeamorimdev/github-blog/issues/${params.id}`,
-        {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          },
-        },
+        `repos/felipeamorimdev/github-blog/issues/${params.id}`,
       )
       setPost(response.data)
     }

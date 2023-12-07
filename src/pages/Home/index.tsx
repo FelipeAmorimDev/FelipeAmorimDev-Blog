@@ -42,11 +42,7 @@ export function Home() {
 
   useEffect(() => {
     async function getUsernameProfile() {
-      const response = await api.get('/users/felipeamorimdev', {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-      })
+      const response = await api.get('users/felipeamorimdev')
       setProfile(response.data)
     }
 
@@ -58,12 +54,7 @@ export function Home() {
     const repo = 'github-blog'
 
     const response = await api.get(
-      `https://api.github.com/search/issues?q=${texto}%20repo:${username}/${repo}`,
-      {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-      },
+      `search/issues?q=${texto}%20repo:${username}/${repo}`,
     )
     setTotalPosts(response.data.total_count)
     setPosts(response.data.items)

@@ -42,6 +42,7 @@ export const PostCompleteHeader = styled.div`
 
 export const PostDetailsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 32px;
 
   > div span {
@@ -66,4 +67,9 @@ export const PostContent = styled.main`
 export const JsCodigoContainer = styled.div`
   padding: 16px;
   background: ${(props) => props.theme.basePost};
+`
+
+export const PostDetails = styled.div`
+  display: flex;
+  gap: 32px;
 `

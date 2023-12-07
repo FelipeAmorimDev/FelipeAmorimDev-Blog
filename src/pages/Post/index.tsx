@@ -9,6 +9,7 @@ import { LinkGithub } from '../../components/LinkGithub'
 import {
   PostCompleteHeader,
   PostContent,
+  PostDetails,
   PostDetailsContainer,
   PostHeaderContainer,
   PostSectionContainer,
@@ -69,27 +70,29 @@ export function Post() {
           </PostCompleteHeader>
 
           <PostDetailsContainer>
-            <div>
-              <h1>{post.title}</h1>
-              <span>
-                <FontAwesomeIcon icon={faGithub} />
-                {post.user.login}
-              </span>
-            </div>
+            <h1>{post.title}</h1>
+            <PostDetails>
+              <div>
+                <span>
+                  <FontAwesomeIcon icon={faGithub} />
+                  {post.user.login}
+                </span>
+              </div>
 
-            <div>
-              <span>
-                <FontAwesomeIcon icon={faCalendarDay} />
-                {formattedDate}
-              </span>
-            </div>
+              <div>
+                <span>
+                  <FontAwesomeIcon icon={faCalendarDay} />
+                  {formattedDate}
+                </span>
+              </div>
 
-            <div>
-              <span>
-                <FontAwesomeIcon icon={faComment} />
-                {post.comments} comentários
-              </span>
-            </div>
+              <div>
+                <span>
+                  <FontAwesomeIcon icon={faComment} />
+                  {post.comments} comentários
+                </span>
+              </div>
+            </PostDetails>
           </PostDetailsContainer>
         </PostHeaderContainer>
 

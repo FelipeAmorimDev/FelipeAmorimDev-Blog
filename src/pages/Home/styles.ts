@@ -80,20 +80,17 @@ export const BlogPostsHeader = styled.header`
       color: ${(props) => props.theme.baseSpan}
     }
   }
+  input[type='text'] {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid ${(props) => props.theme.baseBorder};
+    background: ${(props) => props.theme.baseInput};
+    ${mixins.fonts.textM}
+    color: ${(props) => props.theme.baseText};
 
-  form {
-    input[type='text'] {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 6px;
-      border: 1px solid ${(props) => props.theme.baseBorder};
-      background: ${(props) => props.theme.baseInput};
-      ${mixins.fonts.textM}
-      color: ${(props) => props.theme.baseText};
-
-      &::placeholder {
-        color: ${(props) => props.theme.baseLabel};
-      }
+    &::placeholder {
+      color: ${(props) => props.theme.baseLabel};
     }
   }
 `

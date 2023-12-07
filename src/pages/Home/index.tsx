@@ -16,7 +16,6 @@ import { api } from '../../api/axios'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { useNavigate } from 'react-router-dom'
-import Markdown from 'react-markdown'
 
 interface IProfile {
   name: string
@@ -116,9 +115,18 @@ export function Home() {
             <strong>Publicações</strong>
             <span>{totalPosts} publicações</span>
           </div>
-          <form>
-            <input type="text" placeholder="Buscar conteúdo" />
-          </form>
+
+          <input
+            type="text"
+            id="query "
+            placeholder="Buscar conteúdo"
+            onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.code === 'NumpadEnter' || e.code === 'Enter') {
+                const { target } = e
+                setQuery((target as HTMLInputElement).value)
+              }
+            }}
+          />
         </BlogPostsHeader>
 
         <BlogPostsList>
@@ -141,7 +149,7 @@ export function Home() {
                   <span>{formatedDate}</span>
                 </PostHeader>
 
-                <p>{formatText(post.body, 20)}</p>
+                <p>j{formatText(post.body, 20)}</p>
               </li>
             )
           })}

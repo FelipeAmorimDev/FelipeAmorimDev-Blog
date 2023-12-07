@@ -68,10 +68,9 @@ export function Post() {
             <LinkGithub value="VER NO GITHUB" url={post.html_url} />
           </PostCompleteHeader>
 
-          <h1>{post.title}</h1>
-
           <PostDetailsContainer>
             <div>
+              <h1>{post.title}</h1>
               <span>
                 <FontAwesomeIcon icon={faGithub} />
                 {post.user.login}

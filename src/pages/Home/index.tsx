@@ -148,7 +148,7 @@ export function Home() {
                   <span>{formatedDate}</span>
                 </PostHeader>
 
-                <p>j{formatText(post.body, 20)}</p>
+                <p>{formatText(post.body, 20)}</p>
               </li>
             )
           })}

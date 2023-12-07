@@ -136,8 +136,10 @@ export const BlogPostsList = styled.ul`
 `
 
 export const PostHeader = styled.header`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 20px;
 
   h2 {
